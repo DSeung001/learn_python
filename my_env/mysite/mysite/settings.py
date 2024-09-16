@@ -126,3 +126,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# 이메일 서버 구성
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = '<EMAIL>'
+# EMAIL_HOST_PASSWORD = '<PASSWORD>'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# 이메일 로깅
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

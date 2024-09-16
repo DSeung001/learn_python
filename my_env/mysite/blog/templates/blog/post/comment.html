@@ -1,0 +1,11 @@
+{% extends "blog/base.html" %}
+{% block title %}Add a comment{% endblock %}
+{# 성공시 댓글 표시, 실패시 이전에 form으로 #}
+{% block content%}
+    {% if comment %}
+        <h2>Your comment has been added.</h2>
+        <p><a href="{{ post.get_absolute_url }}">Back to the post</a></p>
+    {% else %}
+        {% include "blog/post/includes/comment_form.html" %}
+    {% endif %}
+{% endblock %}
