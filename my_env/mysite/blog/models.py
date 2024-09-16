@@ -1,14 +1,30 @@
+from django.contrib.auth.models import User
 from django.utils import timezone
 
 from django.db import models
 
 
+# QuerySet 수정
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=Post.Status.PUBLISHED)
+
+
 # Create your models here.
 class Post(models.Model):
+
+    # 중첩 클래스로, 논리적 그룹화 + 캡슐화 강화 + 모듈성 유지를 얻음
+    # 선택을 위한 하위 클래스로 열거형을 제공해줌
+    class Status(models.TextChoices):
+        DRAFT = 'DF', 'Draft'
+        PUBLISHED = 'PB', 'Published'
+
     # db 에서는 varchar
     title = models.CharField(max_length=250)
     # slug = 워드프레스의 slug와 같음, db 에서는 varchar
     slug = models.SlugField(max_length=250)
+    # 다대일 연결
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     # db 에서는 TextField
     body = models.TextField()
     # db 에선 datetime
@@ -17,6 +33,11 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     # auto_now 추가 및, 수정
     updated = models.DateTimeField(auto_now=True)
+    status = models.CharField(max_length=2, choices=Status.choices, default=Status.DRAFT)
+    # 기본 관리자
+    objects = models.Manager()
+    # 커스텀 관리자
+    published = PublishedManager()
 
     # 부가 정보
     class Meta:
@@ -32,3 +53,5 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+

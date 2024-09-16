@@ -1,0 +1,78 @@
+# Python 기본 설정
+./blog/__pycache__/
+./migrations/__pycache__/
+../mysite/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+# 환경 설정
+*.env
+.env.*
+
+# 가상 환경
+venv/
+env/
+ENV/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Django 관련
+db.sqlite3
+db.sqlite3-journal
+/media/
+*.log
+
+# Django static files
+staticfiles/
+static/
+
+# IDE 설정 파일 (VSCode, PyCharm 등)
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Migration 파일 캐시
+*.pyc
+*.pyo
+*.pyd
+
+# MyPy와 Pylint 같은 분석 툴의 설정
+.mypy_cache/
+.pytest_cache/
+.pyright/
+
+# Test 관련 파일
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Celery 관련 파일
+celerybeat-schedule
+celerybeat.pid
+
+# 번역 관련 파일
+*.mo
+
+# 기타 백업 파일
+*.bak
+*.swp
+*~
+*.tmp
+
+# OS 관련 파일
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "css/blog.css" %}" rel="stylesheet">
+</head>
+<body>
+{# https://docs.djangoproject.com/en/4.1/ref/templates/builtins/ 여기서 templates 태그 볼 수 있음 #}
+{# block은 장고에서 해당 영역을 정의함, 이 템플릿을 사용한 템플릿에서 콘텐츠를 채울 수 있음#}
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="sidebar">
+        <h2>My blog</h2>
+        <p>This is my blog.</p>
+    </div>
+</body>
+</html>

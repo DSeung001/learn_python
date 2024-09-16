@@ -30,6 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# 아래 애플리케이션에 마이그레이션을 모두 적용
+# python manage.py makemigrations blog =>  초기 마이그레이션 생성
+# python manage.py migrate => 전체 마이그레이트
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
