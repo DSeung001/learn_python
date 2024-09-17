@@ -1,4 +1,10 @@
 .idea
-./my_env/.idea
-./my_env/Lib
-./my_env/Scripts
+my_env/.idea
+my_env/Lib
+my_env/Scripts
+
+env/.idea
+env/bookmarks/Include/*
+env/bookmarks/Lib/*
+env/bookmarks/Scripts/*
+env/bookmarks/.idea
