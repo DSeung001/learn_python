@@ -2,6 +2,8 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.db import models
 from django.urls import reverse
+from taggit.managers import TaggableManager
+
 
 # QuerySet 수정
 class PublishedManager(models.Manager):
@@ -38,6 +40,9 @@ class Post(models.Model):
     objects = models.Manager()
     # 커스텀 관리자
     published = PublishedManager()
+
+    # 태그 검색 + 추가 + 제거 가능
+    tags = TaggableManager()
 
     # 부가 정보
     class Meta:

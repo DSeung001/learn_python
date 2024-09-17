@@ -30,6 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# sitemap을 위해 사이트id 지정
+SITE_ID = 1
+
 # 아래 애플리케이션에 마이그레이션을 모두 적용
 # python manage.py makemigrations blog =>  초기 마이그레이션 생성
 # python manage.py migrate => 전체 마이그레이트
@@ -41,6 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'taggit',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 # BlogConfig를 추가함으로써 프로젝트에서 애플리케이션 모델을 로드할 수 있음
 
@@ -79,9 +85,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'blog',
+        'USER': 'blog',
+        'PASSWORD': '123456',
     }
 }
 
