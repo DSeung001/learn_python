@@ -1,2 +1,4 @@
 .idea
 ./my_env/.idea
+./my_env/Lib
+./my_env/Scripts
