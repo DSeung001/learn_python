@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('account.urls') ),
+    path('social-auth/', include('social_django.urls', namespace='social')),
 ]
 
 #  디버그 모드 이 때 개별 서버에서 미디어 파일을 서비스 할 수 있도록
