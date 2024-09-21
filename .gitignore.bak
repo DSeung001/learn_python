@@ -8,4 +8,8 @@ env/bookmarks/Include/*
 env/bookmarks/Lib/*
 env/bookmarks/Scripts/*
 env/bookmarks/.idea
-env/bookmarks/bookmarks
+env/bookmarks/bookmarks/cert.crt
+env/bookmarks/bookmarks/cert.key
+env/bookmarks/media/*
+env/bookmarks/media/
+env/bookmarks/media

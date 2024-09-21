@@ -10,3 +10,6 @@ env/bookmarks/Scripts/*
 env/bookmarks/.idea
 env/bookmarks/bookmarks/cert.crt
 env/bookmarks/bookmarks/cert.key
+env/bookmarks/bookmarks/media/*
+env/bookmarks/bookmarks/media/
+env/bookmarks/bookmarks/media
