@@ -23,6 +23,7 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('images/', include('images.urls', namespace='images')),
+    path('__debug__/', include('debug_toolbar.urls')),
 ]
 
 #  디버그 모드 이 때 개별 서버에서 미디어 파일을 서비스 할 수 있도록
